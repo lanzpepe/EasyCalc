@@ -33,22 +33,36 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String value1 = etNum1.getText().toString();
                 String value2 = etNum2.getText().toString();
-                double num1 = Double.parseDouble(value1);
-                double num2 = Double.parseDouble(value2);
-                double sum = num1 + num2;
-                tvTotal.setText(String.valueOf(sum));
+
+                if (value1.length() == 0)
+                    etNum1.setError("Please enter a valid number");
+                else if (value2.length() == 0)
+                    etNum2.setError("Please enter a valid number");
+                else {
+                    double num1 = Double.parseDouble(value1);
+                    double num2 = Double.parseDouble(value2);
+                    double sum = num1 + num2;
+                    tvTotal.setText(String.valueOf(String.format("%.2f", sum)));
+                }
             }
-        });
+    });
 
         btnMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String value1 = etNum1.getText().toString();
                 String value2 = etNum2.getText().toString();
-                double num1 = Double.parseDouble(value1);
-                double num2 = Double.parseDouble(value2);
-                double diff = num1 - num2;
-                tvTotal.setText(String.valueOf(diff));
+
+                if (value1.length() == 0)
+                    etNum1.setError("Please enter a valid number");
+                else if (value2.length() == 0)
+                    etNum2.setError("Please enter a valid number");
+                else {
+                    double num1 = Double.parseDouble(value1);
+                    double num2 = Double.parseDouble(value2);
+                    double diff = num1 - num2;
+                    tvTotal.setText(String.valueOf(String.format("%.2f", diff)));
+                }
             }
         });
 
@@ -57,10 +71,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String value1 = etNum1.getText().toString();
                 String value2 = etNum2.getText().toString();
-                double num1 = Double.parseDouble(value1);
-                double num2 = Double.parseDouble(value2);
-                double prod = num1 * num2;
-                tvTotal.setText(String.valueOf(prod));
+
+                if (value1.length() == 0)
+                    etNum1.setError("Please enter a valid number");
+                else if (value2.length() == 0)
+                    etNum2.setError("Please enter a valid number");
+                else {
+                    double num1 = Double.parseDouble(value1);
+                    double num2 = Double.parseDouble(value2);
+                    double prod = num1 * num2;
+                    tvTotal.setText(String.valueOf(String.format("%.2f", prod)));
+                }
             }
         });
 
@@ -69,10 +90,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String value1 = etNum1.getText().toString();
                 String value2 = etNum2.getText().toString();
-                double num1 = Double.parseDouble(value1);
-                double num2 = Double.parseDouble(value2);
-                double quot = num1 / num2;
-                tvTotal.setText(String.valueOf(quot));
+
+                if (value1.length() == 0)
+                    etNum1.setError("Please enter a valid number");
+                else if (value2.length() == 0)
+                    etNum2.setError("Please enter a valid number");
+                else {
+                    double num1 = Double.parseDouble(value1);
+                    double num2 = Double.parseDouble(value2);
+                    double quot = num1 / num2;
+                    tvTotal.setText(String.valueOf(String.format("%.2f", quot)));
+                }
             }
         });
 
